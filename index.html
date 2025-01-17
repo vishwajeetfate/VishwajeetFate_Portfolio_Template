@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Metadata for Character Encoding and Responsive Design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwajeet Fate - Portfolio</title>
+
+    <!-- External Scripts and Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Particle effects -->
+    <script src="https://kit.fontawesome.com/2d969ef76b.js" crossorigin="anonymous"></script> <!-- Font Awesome for icons -->
+
+    <!-- Google Fonts for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- External CSS Files for Styling -->
+    <link rel="stylesheet" href="CSS/Header.css"> <!-- Header styling -->
+    <link rel="stylesheet" href="CSS/hero.css"> <!-- Hero section styling -->
+    <link rel="stylesheet" href="CSS/about.css"> <!-- About section styling -->
+    <link rel="stylesheet" href="CSS/service.css"> <!-- Services section styling -->
+    <link rel="stylesheet" href="CSS/contact.css"> <!-- Contact section styling -->
+    <link rel="stylesheet" href="CSS/loading.css">
+
+</head>
+<body>
+
+<!-- Loading Screen (Initially visible while the page is loading) -->
+<div id="loading-screen">
+    <img src="Images/Loader/30.gif" alt="Loading..." /> <!-- Loading GIF -->
+    <p>Please wait...</p> <!-- Loading message -->
+</div>
+<script>
+    // Hide the loading screen after 3 seconds
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen after 3 seconds
+      }, 3000); // 3000 milliseconds = 3 seconds
+    });
+  </script>
+
+<!-- Header Section -->
+<header class="header">
+    <nav>
+        <!-- Logo Area -->
+        <div class="logo">
+            <img src="Images/My images/1.png" alt="Logo of Vishwajeet Fate" class="logo-img"> <!-- Logo Image -->
+            <h1>Vishwajeet Fate</h1>
+        </div>
+
+        <!-- Hamburger Menu for Mobile Navigation -->
+        <div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle"> <!-- Checkbox for toggle -->
+            <label for="menu-toggle" class="menu-icon">&#9776;</label> <!-- Menu icon -->
+
+            <!-- Navigation Links -->
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li> <!-- About page link -->
+                <li><a href="Resume.html">Resume</a></li> <!-- Resume page link -->
+                <li><a href="projects.html">Projects</a></li> <!-- Projects page link -->
+                <li><a href="index.html#contact">Contact</a></li> <!-- Contact section link -->
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- JavaScript to toggle between hamburger and cross icon for mobile -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuIcon = document.querySelector('.menu-icon');
+  
+  menuToggle.addEventListener('change', function() {
+    if (menuToggle.checked) {
+      menuIcon.innerHTML = '&times;'; // Change to cross when checked
+    } else {
+      menuIcon.innerHTML = '&#9776;'; // Change back to hamburger when unchecked
+    }
+  });
+
+  // Hide the loading screen once the page has finished loading
+  window.addEventListener('load', function() {
+    document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+  });
+</script>
+
+<!-- Hero Section -->
+<section class="hero" role="banner">
+    <!-- Decorative Line at the Top -->
+    <div class="top-line"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+        <!-- Textual Information -->
+        <div class="text-content">
+            <h1>Vishwajeet Fate</h1>
+            <h2>Game Developer & Designer</h2>
+            <p>
+                Bringing worlds to life with immersive gameplay and dynamic storytelling. Skilled in Unity Engine, I specialize in crafting engaging experiences for players worldwide. Let’s push the boundaries of interactive entertainment together.
+            </p>
+            <a href="#contact" class="btn-secondary" aria-label="Contact Me">Contact Me</a> <!-- CTA button to contact section -->
+             <!-- Download CV Button -->
+             <a href="Images/Vishwajeet Fate  game Designer.pdf" class="btn-secondary" download>Download My CV</a>
+        </div>
+
+        <!-- Profile Photo -->
+        <div class="profile-photo">
+            <img src="Images/My images/Untitled design.png" alt="Professional photo of Vishwajeet Fate, Game Developer & Designer" />
+        </div>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social-links-hero">
+        <!-- Icons linking to social media profiles -->
+        <a href="https://github.com/vishwajeetfate" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/vishwajeetfate/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+        <a href="https://vishwajeetfate.itch.io/" target="_blank" aria-label="Itch.io Profile"><i class="fab fa-itch-io"></i></a>
+        <a href="https://www.instagram.com/vishwajeetfate?igsh=d2JhZ3l4Y2xlODho" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/fatevishwajeet?mibextid=ZbWKwL" target="_blank" aria-label="Facebook Profile"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://x.com/Vishwaj64219311?t=v-PUhtLDLb4scKPXrn6ZrA&s=09" target="_blank" aria-label="Twitter Profile"><i class="fab fa-twitter-square"></i></a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="about-content">
+        <h2>About Me</h2>
+        <div class="about-flex">
+            <!-- About Image -->
+            <img src="Images/My images/About.jpg" alt="Vishwajeet Fate" class="about-image"> <!-- Profile image -->
+
+            <!-- About Description -->
+            <p>
+                I'm Vishwajeet Fate, an aspiring game developer with a passion for designing immersive 
+                experiences and a strong foundation in programming with <strong>C++, C#,</strong> and 
+                <strong>Java</strong>. Through hands-on projects, I’ve refined my skills in key areas like 
+                level design, user interface design, and game testing, showcasing my creativity and 
+                technical abilities.
+                <br><br>
+                Additionally, I have web development skills in <strong>HTML, CSS,</strong> and 
+                <strong>JavaScript</strong>, which allow me to bring my projects online and share my journey 
+                in game development with a broader audience. My experience collaborating on projects has 
+                taught me the value of teamwork and effective communication, making me a strong team 
+                player who thrives in dynamic environments.
+                <br><br>
+                I'm excited to grow within the gaming industry, contributing my skills and learning from 
+                others along the way. Let’s connect and explore the endless possibilities of game 
+                development together!
+            </p>
+
+        </div>
+    </div>
+    <!-- Stars will be generated by JavaScript -->
+</section>
+
+<script>
+    // Generate stars
+    const starCount = 100;  // You can change this number based on how many stars you want
+    const aboutSection = document.querySelector('.about');  // The About section to append stars to
+
+    for (let i = 0; i < starCount; i++) {
+        // Create a new star element
+        const star = document.createElement('div');
+        star.classList.add('star');
+
+        // Randomly position each star within the about section
+        star.style.top = `${Math.random() * 100}vh`;   // Random vertical position (percentage of viewport height)
+        star.style.left = `${Math.random() * 100}vw`;  // Random horizontal position (percentage of viewport width)
+
+        // Random size for the stars
+        star.style.width = `${Math.random() * 3 + 1}px`;  // Random width between 1 and 4px
+        star.style.height = star.style.width;  // Make the height equal to the width to create circles
+
+        aboutSection.appendChild(star);  // Add the star to the section
+    }
+</script>
+
+<!-- Services Section -->
+<section id="services" class="card">
+    <h2>Services</h2>
+    <div class="service-list">
+        <!-- Service Item 1: Web Development -->
+        <div class="service-item" data-category="web-development" data-background="url('path_to_web_dev_image.jpg')">
+            <div class="service-icon"><i class="fas fa-laptop-code"></i></div> <!-- Web development icon -->
+            <h3>Web Development</h3>
+            <div class="service-info">
+                <p>Web Development | HTML, CSS, JavaScript, PHP | Available Now</p>
+                <p>Offering professional web development services to create dynamic, responsive, and visually appealing websites tailored to your needs. Expertise in front-end development (HTML, CSS, JavaScript) and back-end development (PHP).</p>
+                <a href="/services.html" aria-label="Learn More About Web Development"><i class="fas fa-external-link-alt"></i> Learn More</a>
+            </div>
+        </div>
+        
+        <!-- Service Item 2: Game Development -->
+        <div class="service-item" data-category="game-development" data-background="url('path_to_game_dev_image.jpg')">
+            <div class="service-icon"><i class="fas fa-gamepad"></i></div> <!-- Game development icon -->
+            <h3>Game Development</h3>
+            <div class="service-info">
+                <p>Game Development | Unity 3D, Unity 2D, Multiplayer | Available Now</p>
+                <p>Providing immersive game development services using Unity to create both 2D and 3D games, including multiplayer experiences. Custom solutions for game mechanics, interactive storytelling, and cross-platform deployment.</p>
+                <a href="/services.html" aria-label="Learn More About Game Development"><i class="fas fa-external-link-alt"></i> Learn More</a>
+            </div>
+        </div>
+
+        <!-- Service Item 3: Graphic Design -->
+        <div class="service-item" data-category="graphic-design" data-background="url('path_to_graphic_design_image.jpg')">
+            <div class="service-icon"><i class="fas fa-paint-brush"></i></div> <!-- Graphic design icon -->
+            <h3>Graphic Design</h3>
+            <div class="service-info">
+                <p>Graphic Design | Adobe Photoshop, Illustrator | Available Now</p>
+                <p>Specializing in custom graphic design services, including branding, illustrations, logos, and promotional materials. We create designs that effectively communicate your brand's identity and message.</p>
+                <a href="/services.html" aria-label="Learn More About Graphic Design"><i class="fas fa-external-link-alt"></i> Learn More</a>
+            </div>
+        </div>
+
+        <!-- Service Item 4: UI/UX Design -->
+        <div class="service-item" data-category="ui-ux-design" data-background="url('path_to_ui_ux_design_image.jpg')">
+            <div class="service-icon"><i class="fas fa-desktop"></i></div> <!-- UI/UX design icon -->
+            <h3>UI/UX Design</h3>
+            <div class="service-info">
+                <p>UI/UX Design | Figma, Adobe XD | Available Now</p>
+                <p>Providing user-centered UI/UX design solutions, focusing on creating intuitive interfaces, seamless user experiences, and visually engaging designs for websites and applications.</p>
+                <a href="/services.html" aria-label="Learn More About UI/UX Design"><i class="fas fa-external-link-alt"></i> Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button to Explore More Services -->
+    <div class="explore-more">
+        <a href="projects.html" class="explore-more-btn" aria-label="Explore More Services">Explore My Projects</a>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="top-line"></div>
+    <div class="container">
+      <!-- Personal Details Section -->
+      <div class="personal-details">
+        <img src="Images/My images/logo.png" alt="Logo" class="logo-img">
+        <h2 class="headline">Let's Connect</h2>
+        <p class="sub-text">Let's build something amazing together</p>
+        <p class="sub-text">Feel free to reach out for any questions or projects!</p>
+  
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://github.com/vishwajeetfate" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/vishwajeetfate/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          <a href="https://vishwajeetfate.itch.io/" target="_blank" class="social-icon"><i class="fab fa-itch-io"></i></a>
+          <a href="https://www.instagram.com/vishwajeetfate?igsh=d2JhZ3l4Y2xlODho" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/fatevishwajeet?mibextid=ZbWKwL" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="https://x.com/Vishwaj64219311?t=v-PUhtLDLb4scKPXrn6ZrA&s=09" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+          
+          <!-- Mobile Number as a Social Link -->
+          <a href="tel:+919834469292" class="social-icon"><i class="fas fa-phone-alt"></i></a>
+        </div>
+          <!-- Decorative Line at the Top -->
+        <div class="top-line"></div>
+  
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form-section">
+        <h2 class="form-heading">Contact Me</h2>
+        <form action="YOUR_SERVER_URL" method="POST">
+          <input type="text" name="firstName" placeholder="First Name" required class="input-field">
+          <input type="text" name="lastName" placeholder="Last Name" required class="input-field">
+          <input type="email" name="email" placeholder="Email" required class="input-field">
+          <textarea name="message" placeholder="What's on your mind?" rows="6" required class="input-field"></textarea>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+<!-- Footer Section (Already included above) -->
+  <footer>
+      <!-- Decorative Line at the Top -->
+      <div class="top-line"></div>
+    <p>&copy; 2024 Vishwajeet Fate. All rights reserved.</p>
+  </footer>
+
+
+
+  <script>
+    // Function to generate a slightly dark color
+    function getRandomModerateDarkColor() {
+        const r = Math.floor(Math.random() * 70) + 30;  // Red (30-99 range)
+        const g = Math.floor(Math.random() * 70) + 30;  // Green (30-99 range)
+        const b = Math.floor(Math.random() * 70) + 30;  // Blue (30-99 range)
+        return `rgb(${r}, ${g}, ${b})`;  // Return the RGB color in a moderate dark shade
+    }
+
+    // Select all the service items
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    // Add event listeners for hover effect
+    serviceItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const randomDarkColor = getRandomModerateDarkColor(); // Get random moderately dark color
+            item.style.backgroundColor = randomDarkColor; // Apply dark color to background
+        });
+
+        // Reset the background color when hover ends
+        item.addEventListener('mouseleave', function() {
+            item.style.backgroundColor = ''; // Reset to default (will use CSS styling)
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

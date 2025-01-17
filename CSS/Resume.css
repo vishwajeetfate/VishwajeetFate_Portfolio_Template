@@ -1,0 +1,345 @@
+/* Add Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600;700&family=Lato:wght@400;500;600&display=swap');
+
+/* General Body Styling */
+body {
+    background-color: #151515; /* Dark Grey/Black background for the entire page */
+    color: #eae7e7; /* Light Grey text color for general content */
+    font-family: 'Roboto', Arial, sans-serif; /* Default font family */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.6; /* Increase line height for better readability */
+    height: 100%; /* Ensure body takes the full height of the viewport */
+}
+
+
+/* Basic responsive design */
+@media screen and (max-width: 768px) {
+    .header nav .logo h1 {
+        font-size: 1.2rem;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+}
+
+/* Particle background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind all other elements */
+    background-color: #000000; /* Dark background for better contrast */
+}
+
+/* Uniform Section Container */
+.section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #2a2b2d5e; /* Darker background for the sections */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Section Title Styling (Centered, with box) */
+.section-title {
+    font-family: 'Poppins', sans-serif; /* Lighter, more contemporary font */
+    font-size: 2.5rem;
+    font-weight: 600; /* Slightly bolder weight for titles */
+    text-transform: uppercase; /* Add emphasis to section titles */
+    color: #008C94;
+    padding: 12px 20px;
+    border: 2px solid #008C94;
+    letter-spacing: 1px; /* Increase letter-spacing for better visual appeal */
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover Effect for Section Title */
+.section-title:hover {
+    background-color: #008C94;
+    color: #1E1E1E;
+    border-color: #ffffff;
+    cursor: pointer;
+}
+
+.section-title i {
+    margin-right: 10px;
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-item {
+    display: flex;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(even) {
+    animation-delay: 0.5s;
+}
+
+/* Animation for Timeline Item */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* New Fade-In Effect for Section */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    background-color: #008C94; /* Light teal for the icon */
+    border: 3px solid #008C94;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    z-index: 1;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Animation for Timeline Icon */
+.timeline-icon:hover {
+    transform: scale(1.2);
+    background-color: #ffffff;
+    color: #008C94;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 3px;
+    height: 100%;
+    background-color: #008C94;
+}
+
+/* Uniform Timeline Content */
+.timeline-content {
+    margin-left: 70px;
+    padding: 20px;
+    background-color: #2A2B2D; /* Dark grey background for experience items */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Uniform max-width for all timeline items */
+    width: 100%; /* Ensures responsiveness */
+    color: #eae7e7; /* Light grey text for paragraph */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Timeline Content */
+.timeline-content:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content h3 {
+    font-family: 'Lato', sans-serif; /* Clean sans-serif font for headings */
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.5px; /* Slightly spaced letters for clarity */
+    margin: 0 0 10px;
+    text-transform: capitalize; /* Keep content headings (like B.Tech) left-aligned */
+}
+
+.timeline-content p {
+    font-size: 1.2rem;
+    font-weight: 500; /* Normal weight for paragraph text */
+    color: #eae7e7;
+     /* Improved line height for text clarity */
+}
+
+strong {
+    font-weight: bold;
+    color: #008C94;
+    padding: 0.2rem 0.4rem;
+}
+
+.timeline-content ul {
+    margin: 10px 0 0;
+    padding-left: 16px;
+    font-size: 0.95rem;
+    color: #dadada; /* Light grey for list items */
+}
+
+.timeline-icon:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    background-color: #008C94;
+    color: white;
+    font-size: 0.9rem;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .timeline-content {
+        margin-left: 50px;
+        max-width: 100%; /* Ensure full width on smaller screens */
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-icon {
+        left: 5px;
+    }
+}
+
+/* Skills Section */
+.skills-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #2a2b2d5e; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.skills-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-section h2 {
+    font-family: 'Poppins', sans-serif; /* Clean, modern font */
+    font-size: 2.4rem;
+    font-weight: 700; /* Bold for the main title */
+    text-align: center;
+    color: #008C94;
+    margin-bottom: 20px;
+}
+
+/* Skills Category Titles */
+.skills-category {
+    margin-bottom: 30px;
+}
+
+.skills-category.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.category-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #008C94;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #008C94;
+    text-transform: uppercase; 
+    align-items: center;
+}
+
+.category-title:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 items per row */
+    gap: 20px;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.skill-item {
+    font-family: 'Roboto', sans-serif; /* Keeping the font consistent */
+    display: flex;
+    align-items: center;
+    background-color: #3A3B3D;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.skill-item:hover {
+    background-color: #008C94;
+    transform: scale(1.05);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    transform: rotate(10deg);
+}
+
+.skill-name {
+    font-size: 1.2rem;
+    color: #eae7e7;
+    font-weight: 500; /* Slightly bolder for skill names */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-list {
+        grid-template-columns: 1fr;  /* Single column on smaller screens */
+    }
+
+    .skills-section {
+        padding: 20px;
+    }
+}

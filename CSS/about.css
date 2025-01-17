@@ -1,0 +1,111 @@
+
+/* About Section Styles */
+.about {
+    position: relative;
+    background-color: #000; /* Consistent background color */
+    padding: 4rem 7.5rem;
+    text-align: center;
+    border-top: 5px solid #008C94;
+    border-bottom: 5px solid #008C94;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-family: 'Poppins', Arial, sans-serif;
+    height: auto;
+    overflow: hidden; /* Ensure stars don't affect outside areas */
+    z-index: 1; /* Ensure content is above the stars */
+}
+
+/* Star Styles */
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0; /* Initially hidden */
+    animation: blinkStars 1.5s infinite; /* Blinking animation */
+    pointer-events: none;
+    z-index: -1; /* Ensure stars are behind content */
+}
+
+/* Blinking Stars Animation */
+@keyframes blinkStars {
+    0%, 100% {
+        opacity: 0; /* Start and end with invisible stars */
+    }
+    50% {
+        opacity: 1; /* Stars become visible in the middle of the animation */
+    }
+}
+
+/* About Section Content */
+.about h2, .about h3 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #0095B7;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+
+.about p {
+    flex: 1;
+    text-align: left;
+    font-size: 1.2rem;
+    margin: 0 2rem;
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.about-image {
+    max-width: 250px;
+    margin: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* About Section Responsive Adjustments */
+@media (max-width: 1024px) {
+    .about h2, .about h3 {
+        font-size: 2.5rem;
+    }
+
+    .about p {
+        font-size: 1.1rem;
+        text-align: center;
+        margin: 0 1.5rem;
+    }
+
+    .about-image {
+        max-width: 200px;
+        margin: 1rem;
+    }
+
+    .about-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 3rem 1rem;
+    }
+
+    .about h2, .about h3 {
+        font-size: 1.8rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+        margin: 0 1rem;
+    }
+
+    .about-image {
+        max-width: 180px;
+    }
+
+    .about-flex {
+        gap: 15px;
+    }
+}

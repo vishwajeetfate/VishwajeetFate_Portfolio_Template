@@ -1,0 +1,171 @@
+/* General Body Styling */
+body {
+  background-color: #151515; /* Dark Grey/Black background for the entire page */
+  color: #eae7e7; /* Light Grey text color for general content */
+  font-family: 'Roboto', Arial, sans-serif; /* Default font family */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  line-height: 1.6; /* Increase line height for better readability */
+  height: 100%; /* Ensure body takes the full height of the viewport */
+}
+
+/* Header Styling */
+.header {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  width: auto;
+  box-shadow: 0 4px 20px hsla(210, 5%, 15%, 0.677);
+  background-color: #000000f5;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /* Padding for spacing */
+}
+
+.logo {
+  display: flex;
+  align-items: center; /* Vertically center the items */
+  gap: 10px; /* Space between logo and text */
+  flex: 1; /* Pushes the logo to the left side */
+}
+
+.logo img {
+  height: 50px; /* Logo size */
+  width: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Rounded corners */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.logo h1 {
+  font-size: 26px; /* Logo text size */
+  color: #fff;
+  margin: 0; /* Remove default margin */
+  transition: letter-spacing 0.3s ease, text-shadow 0.3s ease, background-position 0.3s ease;
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari */
+  color: transparent; /* Initially transparent text */
+  background-image: linear-gradient(90deg, #ffffff, #ffffff); /* Gradient for text filling */
+}
+
+/* Navigation Menu Styling */
+nav {
+  display: flex;
+  justify-content: flex-end; /* Align links to the right */
+  align-items: center;
+  width: 100%; /* Ensure navigation takes full width */
+  padding: 20px 30px;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end; /* Align links to the right */
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: #0095B7;
+  text-decoration: none;
+  padding: 12px 16px; /* Spacing around each link */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  color: rgb(140, 222, 242); /* Hover color */
+  background-color: rgba(0, 149, 183, 0.1); /* Background change on hover */
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+  display: none;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+}
+
+/* Checkbox for mobile menu */
+.menu-toggle {
+  display: none; /* Hide the checkbox */
+}
+
+/* Mobile Menu Styling */
+@media only screen and (max-width: 950px) {
+  /* The menu will appear vertically on smaller screens */
+  .menu {
+    flex-direction: column;
+    background-color: rgba(21, 20, 24, 0.95); /* Semi-transparent background */
+    align-items: start;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(1, 0); /* Initially hidden */
+    transform-origin: top;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px; /* Shadow for menu */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+  }
+
+  .menu li {
+    margin-bottom: 12px;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%; /* Ensure each menu item takes full width */
+  }
+
+  /* Mobile Hamburger Menu Icon */
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+  }
+
+  /* When the checkbox is checked, display the menu */
+  .menu-toggle:checked + .menu-icon + .menu {
+    opacity: 1;
+    transform: scale(1, 1); /* Show the menu */
+  }
+
+  /* Change the icon color when the menu is open */
+  .menu-icon.open {
+    color: #00b0ff; /* Active color */
+  }
+}
+
+footer {
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #333;
+  color: white;
+}
+
+.footer-line {
+  height: 2px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+footer p {
+  font-size: 19px;
+  margin: 0;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scaling */
+}
+
+
+/* Hover effect on the <p> tag */
+footer p:hover {
+  color: #00b0ff; /* Change color on hover */
+  cursor: pointer; /* Optional: Change cursor to indicate interactivity */
+  font-size: 21px;
+}

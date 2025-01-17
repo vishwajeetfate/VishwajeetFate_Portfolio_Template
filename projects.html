@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information for SEO and Mobile Responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Vishwajeet Fate showcasing projects in web development, game development, music composition, and design.">
+    <meta name="keywords" content="Portfolio, Web Development, Game Development, Music, Design, Vishwajeet Fate">
+    <title>Vishwajeet Fate - Portfolio</title>
+
+    <!-- Linking External Stylesheets -->
+    <link rel="stylesheet" href="CSS/Header.css"> 
+    <link rel="stylesheet" href="CSS/Project.css"> <!-- Styles for Projects -->
+    <!-- Google Fonts for Roboto and Montserrat fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/2d969ef76b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!-- Header Section -->
+<header class="header">
+    <nav>
+        <!-- Logo Area -->
+        <div class="logo">
+            <img src="Images/My images/1.png" alt="Logo of Vishwajeet Fate" class="logo-img"> <!-- Logo Image -->
+            <h1>Vishwajeet Fate</h1>
+        </div>
+
+        <!-- Hamburger Menu for Mobile Navigation -->
+        <div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle"> <!-- Checkbox for toggle -->
+            <label for="menu-toggle" class="menu-icon">&#9776;</label> <!-- Menu icon -->
+
+            <!-- Navigation Links -->
+            <ul class="menu">
+                <li><a href="index.html">About</a></li> <!-- About page link -->
+                <li><a href="Resume.html">Resume</a></li> <!-- Resume page link -->
+                <li><a href="projects.html">Projects</a></li> <!-- Projects page link -->
+                <li><a href="index.html#contact">Contact</a></li> <!-- Contact section link -->
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- JavaScript to toggle between hamburger and cross icon for mobile -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuIcon = document.querySelector('.menu-icon');
+  
+  menuToggle.addEventListener('change', function() {
+    if (menuToggle.checked) {
+      menuIcon.innerHTML = '&times;'; // Change to cross when checked
+    } else {
+      menuIcon.innerHTML = '&#9776;'; // Change back to hamburger when unchecked
+    }
+  });
+
+  // Hide the loading screen once the page has finished loading
+  window.addEventListener('load', function() {
+    document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+  });
+</script>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Projects Section -->
+        <section id="projects" class="card">
+            <h2>Projects</h2>
+
+            <!-- Category Buttons for Filtering Projects -->
+            <div class="playing-cards" id="category-buttons">
+                <div class="card" onclick="filterProjects('web')" style="background-color: #2d3a2b;">
+                    <i class="fas fa-laptop-code"></i> <!-- Icon for Web -->
+                    <h3>Web</h3>
+                    <p>Explore web projects</p>
+                </div>
+                <div class="card" onclick="filterProjects('game')" style="background-color: #1c3b5b;">
+                    <i class="fas fa-gamepad"></i> <!-- Icon for Game -->
+                    <h3>Game</h3>
+                    <p>Discover games</p>
+                </div>
+                <div class="card" onclick="filterProjects('Video')" style="background-color: #b08300;">
+                    <i class="fas fa-video"></i> <!-- Icon for Video -->
+                    <h3>Video</h3>
+                    <p>Watch videos</p>
+                </div>
+                <div class="card" onclick="filterProjects('Post')" style="background-color: #b33d28;">
+                    <i class="fas fa-pencil-alt"></i> <!-- Icon for Post -->
+                    <h3>Post</h3>
+                    <p>Creative posts</p>
+                </div>
+                <div class="card" onclick="filterProjects('LOGO')" style="background-color: #333333;">
+                    <i class="fas fa-paint-brush"></i> <!-- Icon for Logo -->
+                    <h3>Logo</h3>
+                    <p>Logo designs</p>
+                </div>
+                <div class="card" onclick="filterProjects('music')" style="background-color: #cc3e2f;">
+                    <i class="fas fa-music"></i> <!-- Icon for Music -->
+                    <h3>Music</h3>
+                    <p>Listen to music</p>
+                </div>
+            </div>
+
+            <!-- Back Button to Show Categories Again -->
+            <button id="back-btn" class="category-btn" onclick="backToCategories()">Back</button>
+
+            <!-- Project List (Initially Hidden) -->
+            <div id="project-list" class="project-list" style="display: none;">
+                
+                <!-- Project 1: Stack Ball 3D Game -->
+                <div class="project-item" data-category="game">
+                    <div class="carousel">
+                        <img src="Images/StackBall/download.png" alt="Stack Ball 3D Game Screenshot" class="carousel-image active">
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <h3>Stack Ball 3D</h3>
+                    <p>Hyper-Casual Puzzle Game | Unity</p>
+                    <p>Oct 2024 - Present</p>
+                    <p>Ongoing hyper-casual puzzle game challenging players with 3D platform-smashing mechanics. Currently optimizing for Android and HTML5 Web.</p>
+                </div>
+
+                <!-- Project 2: Jumping Cube Game -->
+                <div class="project-item" data-category="game">
+                    <div class="carousel">
+                        <img src="Images/JumpingCube/screenshot1.png" alt="Jumping Cube Game Screenshot" class="carousel-image active">
+                        <img src="Images/JumpingCube/screenshot2.png" alt="Jumping Cube Game Screenshot" class="carousel-image">
+                        <img src="Images/JumpingCube/Screenshot3.png" alt="Jumping Cube Game Screenshot" class="carousel-image">
+                        <img src="Images/JumpingCube/screenshot4.png" alt="Jumping Cube Game Screenshot" class="carousel-image">
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <h3>Jumping Cube</h3>
+                    <p>Hyper-Casual Game | Unity</p>
+                    <p>Sep 2024</p>
+                    <p>Developing a hyper-casual jumping game with simple tap mechanics and minimalist graphics. Utilizing Unity's physics for responsive gameplay and planning AdMob monetization. Targeting Google Play Store for future release.</p>
+                </div>
+
+                <!-- Temple of Memories -->
+                <div class="project-item" data-category="game">
+                    <!-- Carousel for displaying game screenshots -->
+                    <div class="carousel">
+                        <!-- Each carousel image representing a screenshot of the game -->
+                        <img src="Images/TempleOfMemories/screenshot1.png" alt="Temple of Memories Game Screenshot 1" class="carousel-image active">
+                        <img src="Images/TempleOfMemories/screenshot2.png" alt="Temple of Memories Game Screenshot 2" class="carousel-image">
+                        <img src="Images/TempleOfMemories/screenshot3.png" alt="Temple of Memories Game Screenshot 3" class="carousel-image">
+                        <img src="Images/TempleOfMemories/screenshot4.png" alt="Temple of Memories Game Screenshot 4" class="carousel-image">
+                        <img src="Images/TempleOfMemories/screenshot5.png" alt="Temple of Memories Game Screenshot 5" class="carousel-image">
+                        <img src="Images/TempleOfMemories/screenshot6.png" alt="Temple of Memories Game Screenshot 6" class="carousel-image">
+                        <img src="Images/TempleOfMemories/screenshot7.png" alt="Temple of Memories Game Screenshot 7" class="carousel-image">
+                        <!-- Navigation buttons for the carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Title and game details -->
+                    <h3>Temple of Memories</h3>
+                    <p>Story-Based Puzzle Game | Unity</p>
+                    <p>Mar 2023</p>
+                    <p>A story-driven game with themes of Forget-Me-Not, Time Travel/Reversal, and Upside Down. Players restore an ancient temple by solving memory puzzles, revisiting the past to remember patterns and applying them in the present while avoiding traps with gravity shifts.</p>
+                    <a href="https://vishwajeetfate.itch.io/temple-of-memories" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                </div>
+
+                <!-- Chess Moves Calculator -->
+                <div class="project-item" data-category="game">
+                    <!-- Carousel for displaying screenshots of Chess Moves Calculator -->
+                    <div class="carousel" aria-live="polite">
+                        <!-- Carousel images for the Chess Moves Calculator project -->
+                        <img src="Images/Chess Moves Calculator/pic1.png" alt="Chess Moves Calculator - Image 1" class="carousel-image active" loading="lazy" aria-hidden="false">
+                        <img src="Images/Chess Moves Calculator/pic2.png" alt="Chess Moves Calculator - Image 2" class="carousel-image" loading="lazy" aria-hidden="true">
+                        <img src="Images/Chess Moves Calculator/pic3.png" alt="Chess Moves Calculator - Image 3" class="carousel-image" loading="lazy" aria-hidden="true">
+                        <!-- Navigation buttons for the carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage()">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage()">❯</button>
+                    </div>
+                    <!-- Title and description of the project -->
+                    <h3>Chess Moves Calculator</h3>
+                    <p>Calculate possible chess moves | Unity</p>
+                    <p>Created a Chess Move Highlighter in Unity to calculate and highlight valid moves for any selected chess piece.</p>
+                    <p><strong>Highlight Moves:</strong> Show all legal moves by highlighting cells. <br>
+                        <strong>Enemy Capture:</strong> Highlight cells with capturable enemy pieces in red.
+                        <strong>Code Quality:</strong> Use OOP, design patterns, and clean coding practices.</p>
+                    <p>Mar 2024</p>
+                    <a href="https://youtu.be/24rrALLwPk8" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                </div>
+
+                <!-- Capsule Strike -->
+                <div class="project-item" data-category="game">
+                    <!-- Carousel for displaying screenshots of Capsule Strike -->
+                    <div class="carousel">
+                        <!-- Carousel images for Capsule Strike project -->
+                        <img src="Images/CapsuleStrike/screenshot1.png" alt="Capsule Strike Game Screenshot" class="carousel-image active">
+                        <img src="Images/CapsuleStrike/screenshot2.png" alt="Capsule Strike Game Screenshot" class="carousel-image">
+                        <img src="Images/CapsuleStrike/screenshot3.png" alt="Capsule Strike Game Screenshot" class="carousel-image">
+                        <img src="Images/CapsuleStrike/screenshot4.png" alt="Capsule Strike Game Screenshot" class="carousel-image">
+                        <img src="Images/CapsuleStrike/screenshot5.png" alt="Capsule Strike Game Screenshot" class="carousel-image">
+                        <img src="Images/CapsuleStrike/screenshot6.png" alt="Capsule Strike Game Screenshot" class="carousel-image">
+                        <img src="Images/CapsuleStrike/screenshot7.png" alt="Capsule Strike Game Screenshot" class="carousel-image">
+                        <img src="Images/CapsuleStrike/screenshot8.png" alt="Capsule Strike Game Screenshot" class="carousel-image">
+                        <img src="Images/CapsuleStrike/screenshot9.png" alt="Capsule Strike Game Screenshot" class="carousel-image">
+                        <!-- Navigation buttons for the carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Title and project details -->
+                    <h3>Capsule Strike</h3>
+                    <p>3D Multiplayer FPS | Unity</p>
+                    <p>Jun 2024 - Jul 2024</p>
+                    <p>Developed a Unity-based 3D multiplayer FPS game with a low poly art style. Utilized Photon Unity Networking (PUN) for real-time multiplayer gameplay, along with core FPS mechanics developed in C#.</p>
+                    <a href="https://vishwajeetfate.itch.io/capsule-strike" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                </div>
+
+                <!-- Velocity Surge: Race to the Finish -->
+                <div class="project-item" data-category="game">
+                    <!-- Carousel for displaying screenshots of Velocity Surge -->
+                    <div class="carousel">
+                        <!-- Carousel images showcasing different moments from the game -->
+                        <img src="Images/VelocitySurge/screenshot1.png" alt="Velocity Surge Game Screenshot" class="carousel-image active">
+                        <img src="Images/VelocitySurge/screenshot2.png" alt="Velocity Surge Game Screenshot" class="carousel-image">
+                        <img src="Images/VelocitySurge/screenshot3.png" alt="Velocity Surge Game Screenshot" class="carousel-image">
+                        <img src="Images/VelocitySurge/screenshot4.png" alt="Velocity Surge Game Screenshot" class="carousel-image">
+                        <img src="Images/VelocitySurge/screenshot5.png" alt="Velocity Surge Game Screenshot" class="carousel-image">
+                        <img src="Images/VelocitySurge/screenshot6.png" alt="Velocity Surge Game Screenshot" class="carousel-image">
+                        <img src="Images/VelocitySurge/screenshot7.png" alt="Velocity Surge Game Screenshot" class="carousel-image">
+                        <img src="Images/VelocitySurge/screenshot8.png" alt="Velocity Surge Game Screenshot" class="carousel-image">
+                        <img src="Images/VelocitySurge/screenshot9.png" alt="Velocity Surge Game Screenshot" class="carousel-image">
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and details -->
+                    <h3>Velocity Surge: Race to the Finish</h3>
+                    <p>Time-Based Racing Game | Unity</p>
+                    <p>Feb 2024 - Mar 2024</p>
+                    <p>Developed a time-based racing game with immersive environments and an adrenaline-pumping soundtrack. Released as a Windows prototype.</p>
+                    <a href="https://vishwajeetfate.itch.io/velocity-surge-race-to-the-finish" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                </div>
+
+                <!-- Zombie-Chaser -->
+                <div class="project-item" data-category="game">
+                    <!-- Carousel for displaying screenshots of Zombie-Chaser -->
+                    <div class="carousel">
+                        <!-- Single screenshot of Zombie-Chaser (could add more images later) -->
+                        <img src="Images/ZombieChaser/screenshot1.jpg" alt="Zombie Chaser Game Screenshot" class="carousel-image active">
+                        <img src="Images/ZombieChaser/screenshot1.jpg" alt="Zombie Chaser Game Screenshot" class="carousel-image">
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Zombie-Chaser</h3>
+                    <p>Survival Game | Unity</p>
+                    <p>Feb 2024</p>
+                    <p>This Unity game prototype marks my inaugural foray into game development. The concept revolves around navigating a character through a perilous environment infested with zombies, requiring the player to execute timely jumps to evade them and prolong survival.</p>
+                    <a href="https://vishwajeetfate.itch.io/zombie-chaser" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                </div>
+
+                <!-- The GST Knowledge Quest -->
+                <div class="project-item" data-category="web">
+                    <!-- Carousel for displaying screenshots of GST Knowledge Quest -->
+                    <div class="carousel">
+                        <!-- Multiple screenshots showing the game interface -->
+                        <img src="Images/GSTKnowledgeQuest/screenshot1.png" alt="GST Knowledge Quest Game Screenshot" class="carousel-image active">
+                        <img src="Images/GSTKnowledgeQuest/screenshot2.png" alt="GST Knowledge Quest Game Screenshot" class="carousel-image">
+                        <img src="Images/GSTKnowledgeQuest/screenshot3.png" alt="GST Knowledge Quest Game Screenshot" class="carousel-image">
+                        <img src="Images/GSTKnowledgeQuest/screenshot4.png" alt="GST Knowledge Quest Game Screenshot" class="carousel-image">
+                        <!-- Navigation buttons for the carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>The GST Knowledge Quest</h3>
+                    <p>web Game|Quiz Game | phaser </p>
+                    <p>Nov 2022</p>
+                    <p>Interactive web game quiz game to test knowledge of Goods and Services Tax (GST) with engaging questions and feedback.</p>
+                    <a href="https://vishwajeetfate.itch.io/the-gst-knowledge-quest" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                </div>
+
+                <!-- RipTide Rescue -->
+                <div class="project-item" data-category="web">
+                    <!-- Carousel for displaying screenshots of RipTide Rescue -->
+                    <div class="carousel">
+                        <!-- Screenshots for RipTide Rescue -->
+                        <img src="Images/RipTideRescue/1.png" alt="Riptide Rescue project screenshot 1" class="carousel-image active">
+                        <img src="Images/RipTideRescue/2.png" alt="Riptide Rescue project screenshot 2" class="carousel-image">
+                        <img src="Images/RipTideRescue/3.png" alt="Riptide Rescue project screenshot 3" class="carousel-image">
+                        <!-- Navigation buttons for the carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+
+                    </div>
+                    <!-- Project title and details -->
+                    <h3>Riptide Rescue</h3>
+                    <p>Educational Web Game | HTML, CSS, JavaScript</p>
+                    <p>November 2022 - December 2022</p>
+                    <p>An educational game focusing on drowning prevention. Integrated webcam functionality for an interactive experience.</p>
+                    <a href="https://vishwajeetfate.itch.io/riptide-rescue" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                </div>
+
+                <!-- Blood Bank Management System -->
+                <div class="project-item" data-category="web">
+                    <!-- Carousel displaying images of the Blood Bank Management System -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Multiple images showcasing the Blood Bank Management System interface -->
+                            <img src="Images/BloodBankManagementSystem/screenshot1.jpg" alt="Blood Bank Management System Screenshot 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/BloodBankManagementSystem/screenshot2.jpg" alt="Blood Bank Management System Screenshot 2" class="carousel-image" loading="lazy">
+                            <img src="Images/BloodBankManagementSystem/screenshot3.jpg" alt="Blood Bank Management System Screenshot 3" class="carousel-image" loading="lazy">
+                            <img src="Images/BloodBankManagementSystem/screenshot4.jpg" alt="Blood Bank Management System Screenshot 4" class="carousel-image" loading="lazy">
+                            <!-- Additional screenshots can be added -->
+                            <!-- For simplicity, many image entries are omitted here -->
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Blood Bank Management System</h3>
+                    <p>Comprehensive Web Application | HTML, CSS, JavaScript, PHP, Figma</p>
+                    <p>Nov 2023 - Mar 2024</p>
+                    <p>Developed a comprehensive Blood Bank Management System website as a key project. Leveraged HTML, CSS, JavaScript, PHP, and Figma for seamless functionality. The system facilitates efficient blood inventory management, donor registration, and blood request handling.</p>
+                    <a href="Error.html" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                </div>
+
+                <!-- YouTube Clone -->
+                <div class="project-item" data-category="web">
+                    <!-- Carousel for displaying images of the YouTube Clone -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Images showcasing the design and layout of the YouTube Clone -->
+                            <img src="Images/YouTubeClone/screenshot1.png" alt="YouTube Clone eCommerce Website Screenshot" class="carousel-image active" loading="lazy">
+                            <img src="Images/YouTubeClone/screenshot2.png" alt="YouTube Clone eCommerce Website Screenshot" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>YouTube Clone</h3>
+                    <p>eCommerce Web Application | HTML, CSS, JavaScript</p>
+                    <p>Mar 2024</p>
+                    <p>Created an eCommerce website inspired by YouTube's layout and functionality, focusing on product display, user engagement, and seamless navigation. Utilized modern web technologies to enhance user experience.</p>
+                    <a href="Error.html" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                </div>
+
+                <!-- Sorting Algorithm Visualizer -->
+                <div class="project-item" data-category="web">
+                    <!-- Carousel displaying images of the Sorting Algorithm Visualizer -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Screenshot showing the interface of the sorting algorithm visualizer -->
+                            <img src="Images/Sorting_Algo_Visualizer/Screenshot.png" alt="Sorting Algorithm Visualizer Screenshot" class="carousel-image active" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Sorting Algorithm Visualizer</h3>
+                    <p>Sorting Algorithm Visualizer Web Application | HTML, CSS, JavaScript</p>
+                    <p>Mar 2024</p>
+                    <p>Developed a web application to visualize various sorting algorithms, helping users understand how different algorithms work through visual representation.</p>
+                    <a href="https://vishwajeetfate.github.io/Sorting_Algo_Visualizer/" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                </div>
+
+                <!-- Liquid Animation Login Form -->
+                <div class="project-item" data-category="web">
+                    <!-- Carousel displaying images of the Liquid Animation Login Form -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Screenshots showcasing the liquid animation effect in the login form -->
+                            <img src="Images/Liquid Animation Login Form/pic1.png" alt="Liquid Animation Login Form Screenshot 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/Liquid Animation Login Form/pic2.png" alt="Liquid Animation Login Form Screenshot 2" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Liquid Animation Login Form</h3>
+                    <p>Animation for Liquid Animation Login Form | HTML, CSS, JavaScript</p>
+                    <p>Mar 2024</p>
+                    <p>Created a visually appealing login form with liquid animation effects, enhancing user interaction through engaging animations.</p>
+                    <a href="https://vishwajeetfate.github.io/Liquid-Animation-Login-Form/" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                </div>
+
+                <!-- Logo Intro -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the video showcasing the Logo Intro -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video of the logo intro animation -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/20211209_2160p.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Logo Intro</h3>
+                    <p>Project showcasing a dynamic logo animation.</p>
+                </div>
+
+                <!-- Bali Adventure -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the video showcasing the Bali Adventure -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video of the Bali adventure exploration -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/Bali Adventure .mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Bali Adventure</h3>
+                    <p>A thrilling exploration of Bali's beautiful landscapes and culture.</p>
+                </div>
+
+                <!-- Goa -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the video showcasing Goa -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video showing the beauty and essence of Goa -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/GOA.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Goa</h3>
+                    <p>Discover why Goa is not just a destination, but a celebration of life, culture, and the spirit of travel.</p>
+                </div>
+
+                <!-- Cheap vs Explorers -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the video comparing budget and exploratory travel -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video comparing budget-friendly travel with exploratory travel -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/cheap.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Cheap vs Explorers</h3>
+                    <p>A comparative review of budget vs exploratory travel.</p>
+                </div>
+
+                <!-- Isha Itinerary -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the video showcasing the Isha Itinerary -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video detailing the itinerary for visiting the Isha Yoga Center -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/Isha Itienarary - 16-Feb.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Isha Itinerary</h3>
+                    <p>A comprehensive itinerary for visiting the Isha Yoga Center.</p>
+                </div>
+
+                <!-- Kerala (1st entry) -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the video showcasing Kerala -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video exploring the hidden gems in Kerala -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/kerala reel with text.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>kerala</h3>
+                    <p>Discover more hidden gems in Kerala.</p>
+                </div>
+
+                <!-- Kerala (2nd entry) -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the second Kerala video -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video showcasing another view of Kerala -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/Kerala (1).mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>kerala</h3>
+                    <p>Discover more hidden gems in Kerala.</p>
+                </div>
+
+                <!-- Travela Roadtrip (Wayanad) -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the Wayanad road trip video -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video of the scenic road trip through Wayanad -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/Travel Roadtrip.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Travela Roadtrip - Wayanad</h3>
+                    <p>A scenic road trip through the lush landscapes of Wayanad.</p>
+                </div>
+
+                <!-- Wayanad -->
+                <div class="project-item" data-category="Video">
+                    <!-- Carousel for the video showcasing Wayanad -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video showcasing the natural beauty and attractions of Wayanad -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/DesignProject/Video/Wayanad 15 feb.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Wayanad</h3>
+                    <p>Experience the natural beauty and attractions of Wayanad.</p>
+                </div>
+
+                <!-- Poster designs Section -->
+
+                <!-- Project: Bali (What to Eat) -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Images for the Bali (What to Eat) project -->
+                            <img src="Images/DesignProject/New folder/Bali/1.png" alt="Liquid Animation Login Form Screenshot 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Bali/2.png" alt="Liquid Animation Login Form Screenshot 2" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Bali/2.png" alt="Liquid Animation Login Form Screenshot 3" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Bali/2.png" alt="Liquid Animation Login Form Screenshot 4" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Bali/2.png" alt="Liquid Animation Login Form Screenshot 5" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Bali/2.png" alt="Liquid Animation Login Form Screenshot 6" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Bali/2.png" alt="Liquid Animation Login Form Screenshot 7" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Bali/2.png" alt="Liquid Animation Login Form Screenshot 8" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Bali/2.png" alt="Liquid Animation Login Form Screenshot 9" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Bali (What to Eat)</h3>
+                    <p>Description for the Bali (What to Eat) project.</p>
+                </div>
+
+                <!-- Project: Bali Poster Adv -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Images for the Bali Poster Adv project -->
+                            <img src="Images/DesignProject/New folder/BALI before Inte/Bali.png" alt="Liquid Animation Login Form Screenshot 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/BALI before Inte/bali1.png" alt="Liquid Animation Login Form Screenshot 2" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/BALI before Inte/Bali2.png" alt="Liquid Animation Login Form Screenshot 9" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Bali Poster Adv</h3>
+                    <p>Description for the Bali Poster Adv project.</p>
+                </div>
+
+                <!-- Project: Delhi (What to Eat) -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Images for the Delhi (What to Eat) project -->
+                            <img src="Images/DesignProject/New folder/delhi/1.png"  class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/delhi/2.png"  class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/delhi/3.png"  class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/delhi/4.png"  class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/delhi/5.png"  class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Delhi (What to Eat)</h3>
+                    <p>Description for the Delhi (What to Eat) project.</p>
+                </div>
+
+                <!-- Project: Hampi -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Images for the Hampi project -->
+                            <img src="Images/DesignProject/New folder/humpi/1.png"  class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/humpi/2.png"  class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/humpi/3.png"  class="carousel-image" loading="lazy">
+                            <!-- ... additional images for the Hampi project ... -->
+                            <img src="Images/DesignProject/New folder/humpi/22.png"  class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Hampi</h3>
+                    <p>Description for the Hampi project.</p>
+                </div>
+
+                <!-- Project: Samundram -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Images for the Samundram project -->
+                            <img src="Images/DesignProject/New folder/Samudram/1.png" alt="Samundram - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Samudram/2.png" alt="Samundram - Image 2" class="carousel-image" loading="lazy">
+                            <!-- ... additional images for the Samundram project ... -->
+                            <img src="Images/DesignProject/New folder/Samundram/14.png" alt="Samundram - Image 14" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Samundram</h3>
+                    <p>Description for the Samundram project.</p>
+                </div>
+
+                <!-- Project: Travel Alone vs With Explorers -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Images for the Travel Alone vs With Explorers project -->
+                            <img src="Images/DesignProject/New folder/travel Alone VS with explorers/1.png" alt="Travel Alone vs With Explorers - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/travel Alone VS with explorers/2.png" alt="Travel Alone vs With Explorers - Image 2" class="carousel-image" loading="lazy">
+                            <!-- ... additional images for the Travel Alone vs With Explorers project ... -->
+                            <img src="Images/DesignProject/New folder/travel Alone VS with explorers/19.png" alt="Travel Alone vs With Explorers - Image 19" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Travel Alone vs With Explorers</h3>
+                    <p>Description for the Travel Alone vs With Explorers project.</p>
+                </div>
+
+                <!-- Project: We Are Hiring -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- We Are Hiring project images -->
+                            <img src="Images/DesignProject/New folder/We are hiring (Poster)/1.png" alt="We Are Hiring - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/We are hiring (Poster)/2.png" alt="We Are Hiring - Image 2" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/We are hiring (Poster)/3.png" alt="We Are Hiring - Image 3" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>We Are Hiring</h3>
+                    <p>Description for the We Are Hiring project.</p>
+                </div>
+
+                <!-- Project: We Are Hiring (Sale) -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- We Are Hiring Sale project images -->
+                            <img src="Images/DesignProject/New folder/We are hiring (Poster)/sale/1.png" alt="We Are Hiring - Sale - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/We are hiring (Poster)/sale/2.png" alt="We Are Hiring - Sale - Image 2" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>We Are Hiring</h3>
+                    <p>Description for the We Are Hiring project (Sale).</p>
+                </div>
+
+                <!-- Project: Digital Marketing Meme -->
+                <div class="project-item" data-category="Post">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Digital Marketing Meme project images -->
+                            <img src="Images/DesignProject/New folder/Digital Marketing meme/1.png" alt="Digital Marketing Meme - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Digital Marketing meme/2.png" alt="Digital Marketing Meme - Image 2" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Digital Marketing meme/3.png" alt="Digital Marketing Meme - Image 3" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Digital Marketing meme/4.png" alt="Digital Marketing Meme - Image 4" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Digital Marketing meme/5.png" alt="Digital Marketing Meme - Image 5" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Digital Marketing meme/6.png" alt="Digital Marketing Meme - Image 6" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title and description -->
+                    <h3>Digital Marketing Meme</h3>
+                    <p>Description for the Digital Marketing Meme project.</p>
+                </div>
+
+                <!-- Logo Projects -->
+                <!-- Project: LOGO TunebyteHub -->
+                <div class="project-item" data-category="LOGO">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- TunebyteHub logo images -->
+                            <img src="Images/DesignProject/New folder/Tunebyte/4.jpg" alt="TunebyteHub - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Tunebyte/5.jpg" alt="TunebyteHub - Image 2" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>TunebyteHub</h3>
+                </div>
+
+                <!-- Project: LOGO BytestoryHub -->
+                <div class="project-item" data-category="LOGO">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- BytestoryHub logo images -->
+                            <img src="Images/DesignProject/New folder/Bytestoryhub/2.jpg" alt="BytestoryHub - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/BytestoryHub/6.jpg" alt="BytestoryHub - Image 2" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/BytestoryHub/7.jpg" alt="BytestoryHub - Image 3" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/BytestoryHub/9.jpg" alt="BytestoryHub - Image 4" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>BytestoryHub</h3>
+                </div>
+
+                <!-- Project: LOGO Chaitane Connect -->
+                <div class="project-item" data-category="LOGO">
+                    <!-- Carousel for images -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Chaitane Connect logo images -->
+                            <img src="Images/DesignProject/New folder/Chaintane connect/1.png" alt="Chaitane Connect - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Chaintane connect/2.png" alt="Chaitane Connect - Image 2" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Chaintane connect/3.png" alt="Chaitane Connect - Image 3" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Chaintane connect/4.png" alt="Chaitane Connect - Image 4" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>Chaitane Connect</h3>
+                </div>
+
+                <!-- Project: FateCart -->
+                <div class="project-item" data-category="LOGO">
+                    <!-- Carousel for FateCart project -->
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Only one image here for FateCart project -->
+                            <img src="Images/DesignProject/New folder/FateCart.png" alt="Chaitane Connect - Image 1" class="carousel-image active" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>FateCart</h3>
+                </div>
+
+                <!-- Project: Capsule Strick -->
+                <div class="project-item" data-category="LOGO">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Two images for Capsule Strick project -->
+                            <img src="Images/DesignProject/New folder/Capsule strick/1 (2).png" alt="Capsule Strick - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Capsule strick/1.png" alt="Capsule Strick - Image 1" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>Capsule Strick</h3>
+                </div>
+
+                <!-- Project: GST Knowledge Quest -->
+                <div class="project-item" data-category="LOGO">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Two images for GST Knowledge Quest project -->
+                            <img src="Images/DesignProject/New folder/GST/1 (3).png" alt="GST Knowledge Quest - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/GST/1 (4).png" alt="GST Knowledge Quest - Image 1" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>GST Knowledge Quest</h3>
+                </div>
+
+                <!-- Project: Git & Grind -->
+                <div class="project-item" data-category="LOGO">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Single image for Git & Grind project -->
+                            <img src="Images/DesignProject/New folder/Git&grind/1 (6).png" alt="Git & Grind - Image 1" class="carousel-image active" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>Git & Grind</h3>
+                </div>
+
+                <!-- Project: Temple of Memories -->
+                <div class="project-item" data-category="LOGO">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Single image for Temple of Memories project -->
+                            <img src="Images/DesignProject/New folder/TempleOfMemories.png" alt="Temple of Memories - Image 1" class="carousel-image active" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>Temple of Memories</h3>
+                </div>
+
+                <!-- Project: LinkedIn Banners -->
+                <div class="project-item" data-category="LOGO">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Multiple images for LinkedIn Banners project -->
+                            <img src="Images/DesignProject/New folder/Linkdin/1.jpg" alt="LinkedIn Banner - Image 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/2.jpg" alt="LinkedIn Banner - Image 2" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/3.jpg" alt="LinkedIn Banner - Image 3" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/4.jpg" alt="LinkedIn Banner - Image 4" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/5.jpg" alt="LinkedIn Banner - Image 5" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/6.jpg" alt="LinkedIn Banner - Image 6" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/7.jpg" alt="LinkedIn Banner - Image 7" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/8.jpg" alt="LinkedIn Banner - Image 8" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/9.jpg" alt="LinkedIn Banner - Image 9" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/10.jpg" alt="LinkedIn Banner - Image 10" class="carousel-image" loading="lazy">
+                            <img src="Images/DesignProject/New folder/Linkdin/11.jpg" alt="LinkedIn Banner - Image 11" class="carousel-image" loading="lazy">
+                        </div>
+                        <!-- Navigation buttons for carousel -->
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <!-- Project title -->
+                    <h3>LinkedIn Banners</h3>
+                </div>
+
+                <!-- Music Projects -->
+                <!-- Project: Chill Vibes -->
+                <div class="project-item" data-category="music">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video for Chill Vibes project -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/Music/1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Adventure Soundtrack -->
+                <div class="project-item" data-category="music">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video for Adventure Soundtrack project -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/Music/2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Upbeat Jam -->
+                <div class="project-item" data-category="music">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <!-- Video for Upbeat Jam project -->
+                            <video class="carousel-image active" controls>
+                                <source src="Images/Music/3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="top-line"></div>
+        <p>&copy; 2024 Vishwajeet Fate. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Function to filter projects by category
+        function filterProjects(category) {
+            const projectList = document.getElementById("project-list");
+            const projectItems = document.querySelectorAll(".project-item");
+            const backBtn = document.getElementById("back-btn");
+            const categoryButtons = document.getElementById("category-buttons");
+
+            projectList.style.display = "grid";  // Show the project list
+            backBtn.style.display = "block";     // Show the back button
+            categoryButtons.style.display = "none";  // Hide category buttons
+
+            // Display only the projects that match the selected category
+            projectItems.forEach((item) => {
+                item.style.display = item.dataset.category === category ? "block" : "none";
+            });
+        }
+
+        // Function to go back to the category selection screen
+        function backToCategories() {
+            const projectList = document.getElementById("project-list");
+            const backBtn = document.getElementById("back-btn");
+            const categoryButtons = document.getElementById("category-buttons");
+
+            projectList.style.display = "none";  // Hide project list
+            backBtn.style.display = "none";      // Hide the back button
+            categoryButtons.style.display = "flex";  // Show category buttons again
+
+            // Optional: Reset all project items to be visible
+            const projectItems = document.querySelectorAll(".project-item");
+            projectItems.forEach((item) => {
+                item.style.display = "block";  // Show all projects when back is clicked
+            });
+        }
+
+        // Function for navigating to previous image in carousel
+        function prevImage(button) {
+            const carousel = button.closest(".carousel");
+            const images = carousel.querySelectorAll(".carousel-image");
+            const activeIndex = [...images].findIndex((img) => img.classList.contains("active"));
+
+            images[activeIndex].classList.remove("active");
+            const newIndex = (activeIndex - 1 + images.length) % images.length;
+            images[newIndex].classList.add("active");
+        }
+
+        // Function for navigating to next image in carousel
+        function nextImage(button) {
+            const carousel = button.closest(".carousel");
+            const images = carousel.querySelectorAll(".carousel-image");
+            const activeIndex = [...images].findIndex((img) => img.classList.contains("active"));
+
+            images[activeIndex].classList.remove("active");
+            const newIndex = (activeIndex + 1) % images.length;
+            images[newIndex].classList.add("active");
+        }
+    </script>
+  
+  <script>
+    // Some random colors for animated balls
+    const colors = ["#2d3a2b", "#1c3b5b", "#333333", "#b33d28", "#cc3e2f"];
+
+    const numBalls = 70;
+    const balls = [];
+
+    // Get the <main> element to append balls to
+    const mainSection = document.querySelector("main");
+
+    // Create balls and assign random properties
+    for (let i = 0; i < numBalls; i++) {
+        let ball = document.createElement("div");
+        ball.classList.add("ball");
+
+        // Random color
+        ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+        // Random initial position within the viewport (clamped to avoid overflow)
+        let leftPos = Math.random() * 90; // Keeps it within 90% of viewport width
+        let topPos = Math.random() * 90; // Keeps it within 90% of viewport height
+        ball.style.left = `${leftPos}vw`;
+        ball.style.top = `${topPos}vh`;
+
+        // Random scale and size (minimum size set to 0.5em)
+        let scale = Math.random();
+        ball.style.transform = `scale(${scale})`;
+        ball.style.width = `${Math.random() + 0.5}em`;  // Set minimum size
+        ball.style.height = ball.style.width;
+
+        balls.push(ball);
+        mainSection.append(ball); // Append balls to <main> section
+    }
+
+    // Keyframes for ball movement animation
+    balls.forEach((el, i, ra) => {
+        let to = {
+            x: Math.random() * (i % 2 === 0 ? -5 : 5),  // Limiting horizontal movement to avoid overflow
+            y: Math.random() * 5  // Limiting vertical movement to avoid overflow
+        };
+
+        let anim = el.animate(
+            [
+                { transform: "translate(0, 0)" },
+                { transform: `translate(${to.x}rem, ${to.y}rem)` }
+            ],
+            {
+                duration: (Math.random() + 1) * 2000, // Random duration
+                direction: "alternate",
+                fill: "both",
+                iterations: Infinity,
+                easing: "ease-in-out"
+            }
+        );
+    });
+</script>
+
+
+</body>
+</html>

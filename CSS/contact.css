@@ -1,0 +1,182 @@
+/* Contact Section */
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  position: relative;
+  background-color: #121212; /* Keeping original background color */
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Push particles behind content */
+}
+
+/* Container for content */
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Personal Details Section */
+.personal-details {
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 50%;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.personal-details:hover {
+  transform: translateY(-10px); /* Hover effect for smooth animation */
+}
+
+.personal-details img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.personal-details img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.personal-details h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #0095B7; /* Keeping original light blue color */
+}
+
+.personal-details p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #bbb; /* Light gray for readability */
+}
+
+.social-links a {
+  color: white;
+  font-size: 35px;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0095B7; /* Light blue on hover */
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
+/* Align Address and Mobile Number to Left */
+.contact-info {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #bbb; /* Light Gray Color for text */
+}
+
+.contact-info i {
+  margin-right: 10px; /* Space between icon and text */
+  color: #0095B7; /* Light Blue Color for Icons */
+}
+
+/* Form Section */
+.form-section {
+  background-color: #1c1c1c;
+  width: 50%;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.form-section:hover {
+  transform: translateY(-10px); /* Hover effect for smooth animation */
+}
+
+.form-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #0095B7; /* Light Blue Color */
+  font-weight: bold;
+}
+
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+  color: #bbb;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+  border: 2px solid #0095B7; /* Light Blue Focus */
+  background-color: #444;
+}
+
+.form-section button {
+  background-color: #0288d1; /* Original blue for the button */
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.form-section button:hover {
+  background-color: #0277bd; /* Darker blue on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-section button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      width: 90%;
+      margin-top: 40px;
+  }
+
+  .personal-details,
+  .form-section {
+      width: 100%;
+      padding: 20px;
+  }
+}

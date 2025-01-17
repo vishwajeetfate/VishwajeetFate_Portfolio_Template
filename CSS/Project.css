@@ -1,0 +1,320 @@
+/* General Body Styling */
+body {
+    background-color: #151515; /* Dark Grey/Black background for the entire page */
+    color: #eae7e7; /* Light Grey text color for general content */
+    font-family: 'Roboto', Arial, sans-serif; /* Default font family */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.6; /* Increase line height for better readability */
+    height: 100%; /* Ensure body takes the full height of the viewport */
+}
+
+/* Category Section (Cards) Styling */
+.card {
+    padding: 3rem 2rem; /* Padding around each category card */
+    max-width: 1200px; /* Maximum width of the card */
+    margin: 2rem auto; /* Center the card with margin */
+}
+
+.playing-cards {
+    display: grid; /* Grid layout for cards */
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    gap: 2rem; /* Space between cards */
+    justify-items: center; /* Center the cards within each grid cell */
+    padding: 2rem; /* Padding inside the grid */
+    margin-top: 2rem; /* Space above the card grid */
+}
+
+/* Individual Card Styling */
+.playing-cards .card {
+    width: 100%; /* Full width of the container */
+    max-width: 230px; /* Maximum width for each card */
+    height: 280px; /* Fixed height for each card */
+    background-color: #2A2B2D; /* Dark background for cards */
+    border: 2px solid #444; /* Dark border around the cards */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Box shadow for depth effect */
+    text-align: center; /* Center text inside the card */
+    display: flex; /* Flexbox for card content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Distribute space evenly */
+    align-items: center; /* Center content horizontally */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition effects */
+    padding: 20px; /* Padding inside the card */
+}
+
+/* Card Title Styling */
+.playing-cards .card h3 {
+    color: #eae7e7; /* Light Grey text for card titles */
+    font-size: 1.4rem; /* Font size for the card title */
+    margin-bottom: 1rem; /* Space below the title */
+}
+
+/* Card Description Styling */
+.playing-cards .card p {
+    color: rgba(255, 255, 255, 0.8); /* Soft white text for description */
+    font-size: 1rem; /* Font size for the card description */
+    margin-bottom: 1.5rem; /* Space below the description */
+}
+
+.card i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Card Hover Effects */
+.playing-cards .card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+    background-color: #008C94; /* Change background color to teal on hover */
+}
+
+/* Specific Category Colors for Each Card */
+.card[data-category="web"] {
+    background-color: #2d3a2b; /* Dark green for web category */
+}
+
+.card[data-category="game"] {
+    background-color: #1c3b5b; /* Dark blue for game category */
+}
+
+.card[data-category="video"] {
+    background-color: #b08300; /* Yellow-orange for video category */
+}
+
+.card[data-category="post"] {
+    background-color: #b33d28; /* Red for post category */
+}
+
+.card[data-category="logo"] {
+    background-color: #333333; /* Dark grey for logo category */
+}
+
+.card[data-category="music"] {
+    background-color: #cc3e2f; /* Red-orange for music category */
+}
+
+/* Project List Styling */
+#project-list {
+    display: none; /* Hide the project list by default */
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout for projects */
+    gap: 1.5rem; /* Space between project items */
+    justify-items: center; /* Center projects within the grid */
+    margin-top: 3rem; /* Space above the project list */
+}
+
+/* Project Item Styling */
+.project-item {
+    background-color: #2A2B2D; /* Dark background for project items */
+    padding: 2rem; /* Padding inside each project item */
+    width: 100%; /* Full width of the container */
+    max-width: 500px; /* Maximum width of each project item */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    display: flex; /* Flexbox layout for project item content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition effects */
+    margin-bottom: 2rem; /* Space between project items */
+}
+
+/* Project Item Hover Effects */
+.project-item:hover {
+    transform: translateY(-5px); /* Lift project item on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increased shadow effect */
+    background-color: #3b3b3b; /* Darker background color on hover */
+}
+
+/* Carousel Styling */
+.carousel {
+    position: relative; /* Relative positioning for the carousel container */
+    overflow: hidden; /* Hide overflow content (images outside the carousel) */
+    border-radius: 10px; /* Rounded corners for the carousel */
+    margin-bottom: 2rem; /* Space below the carousel */
+    width: 100%; /* Full width of the container */
+    max-width: 400px; /* Limit the width of the carousel */
+    margin: 0 auto; /* Center the carousel */
+}
+
+.carousel-image {
+    width: 100%; /* Full width of the image */
+    height: auto; /* Auto height to maintain aspect ratio */
+    display: none; /* Hide images by default */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+}
+
+.carousel-image.active {
+    display: block; /* Display active image */
+}
+
+/* Carousel Button Styling */
+button.prev, button.next {
+    position: absolute; /* Absolute positioning for the buttons */
+    top: 50%; /* Vertically center the buttons */
+    transform: translateY(-50%); /* Adjust position for perfect centering */
+    color: rgb(0, 0, 0); /* White color for button text */
+    background-color: #008d9400;
+    border: none; /* Remove border */
+    font-size: 2rem; /* Font size for the buttons */
+    padding: 10px; /* Padding inside the buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 10; /* Ensure buttons appear on top of images */
+    border-radius: 0%; /* Circular buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+}
+
+button.prev {
+    left: 10px; /* Position previous button on the left */
+}
+
+button.next {
+    right: 10px; /* Position next button on the right */
+}
+
+/* Back Button Styling */
+#back-btn {
+    display: none; /* Hide the back button by default */
+    background-color: #444; /* Dark background color for the button */
+    color: #FFF; /* White text color */
+    padding: 1.5rem; /* Padding inside the button */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size for the button */
+    margin-bottom: 2rem; /* Space below the button */
+    border-radius: 5px; /* Rounded corners */
+    width: auto; /* Auto width for the button */
+    text-align: center; /* Center text inside the button */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+#back-btn:hover {
+    background-color: #008C94; /* Background color change on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Style for the link inside the .project-item */
+.project-item a {
+    text-decoration: none; /* Remove underline from the link */
+    color: #008C94; /* Set the color of the link */
+    font-weight: bold; /* Make the link text bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    font-size: 16px; /* Set the size of the link text */
+    display: inline-flex;
+    align-items: center; /* Vertically center the text and icon */
+}
+
+/* Style for the icon to match the text size */
+.project-item a i {
+    font-size: 1em; /* Match the font size of the link */
+    margin-left: 5px; /* Space between the text and the icon */
+}
+
+/* Hover effect for the link */
+.project-item a:hover {
+    color: #05bbc5; /* Change color when hovering */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Media Query for Tablets and Smaller Screens */
+@media (max-width: 1024px) {
+    .playing-cards {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+        gap: 1.5rem; /* Space between cards */
+    }
+
+    .playing-cards .card {
+        max-width: 100%; /* Full width of cards for smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .project-item {
+        width: 90%; /* Project items take up 90% of the container width */
+        padding: 2rem; /* Padding inside project items */
+    }
+
+    button.prev, button.next {
+        font-size: 1.5rem; /* Smaller button font size for smaller screens */
+        padding: 8px; /* Smaller padding */
+    }
+
+    .menu {
+        flex-direction: column; /* Stack menu items vertically for smaller screens */
+        gap: 1rem; /* Space between menu items */
+    }
+
+    .menu li a {
+        font-size: 1.5rem; /* Larger font size for menu items on smaller screens */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .playing-cards {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+        gap: 1.5rem; /* Space between cards */
+    }
+
+    .playing-cards .card {
+        max-width: 100%; /* Full width of cards for mobile */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .project-item {
+        width: 90%; /* Project items take up 90% of the container width */
+        padding: 1.5rem; /* Adjust padding inside project items */
+        margin-bottom: 1.5rem; /* Space between project items */
+    }
+
+    button.prev, button.next {
+        font-size: 1.5rem; /* Smaller button size */
+        padding: 8px; /* Smaller padding */
+    }
+
+    #category-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+        margin-top: 2rem; /* Space above category buttons */
+    }
+
+}
+
+/* Fade-In Animation for Category Buttons */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with invisible buttons */
+        transform: translateY(10px); /* Start with a slight downward offset */
+    }
+    to {
+        opacity: 1; /* Fully visible buttons */
+        transform: translateY(0); /* Reset position */
+    }
+}
+
+/* H2 Styling for Projects Section */
+#projects h2 {
+    color: #0095B7; /* Light grey color for project section title */
+    font-size: 3rem; /* Font size for the title */
+    font-weight: bold; /* Bold font for the title */
+    text-align: center; /* Centered title */
+    margin-bottom: 0.5rem; /* Space below the title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+    letter-spacing: 1px; /* Slight letter spacing */
+}
+
+/* Styling for Animated Balls */
+.ball {
+    z-index: -1; /* Ensure balls are behind other content */
+    position: absolute; /* Absolute positioning for the balls */
+    border-radius: 100%; /* Circular balls */
+    opacity: 0.7; /* Slight transparency */
+}
+
+/* Flexbox Layout for Playing Cards */
+.playing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem; /* Space between cards */
+}

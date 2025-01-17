@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Vishwajeet Fate, a Game Developer and Graphic Designer with expertise in Web Development.">
+    <title>Vishwajeet Fate | Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Header.css">
+    <link rel="stylesheet" href="CSS/Resume.css">
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+<body>
+
+
+<!-- Particle Background -->
+<div id="particles-js"></div>
+
+<!-- Navigation Bar -->
+<header class="header">
+    <nav>
+          <!-- Logo Area -->
+          <div class="logo">
+            <img src="Images/My images/1.png" alt="Logo of Vishwajeet Fate" class="logo-img">
+            <h1>Vishwajeet Fate</h1>
+        </div>
+        <div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="menu">
+                <li><a href="index.html">About</a></li>
+                <li><a href="Resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuIcon = document.querySelector('.menu-icon');
+  
+    menuToggle.addEventListener('change', function() {
+        menuIcon.innerHTML = menuToggle.checked ? '&times;' : '&#9776;';
+    });
+</script>
+
+<!-- Education Section -->
+<section class="section" aria-labelledby="education-section">
+    <h2 id="education-section" class="section-title">
+        <i class="fas fa-graduation-cap" aria-hidden="true"></i> Education
+    </h2>
+    <ul class="timeline" role="list">
+        <li class="timeline-item" aria-labelledby="graduation">
+            <div class="timeline-icon" aria-label="Graduation from VIT Bhopal University" role="img">
+                <i class="fas fa-university" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-content">
+                <h3 id="graduation">B.Tech in Computer Science with Specialization in Gaming Technology</h3>
+                <p><strong>Institution:</strong> VIT Bhopal University</p>
+                <p><strong>Duration:</strong> July 2021 - Current</p>
+                <p><strong>CGPA:</strong> 9.05</p>
+                <ul>
+                    <li>Specialized in game development and artificial intelligence techniques used in games.</li>
+                    <li>Worked on various game projects using Unity and Unreal Engine.</li>
+                    <li>Participated in hackathons and workshops to enhance practical skills.</li>
+                    <li>Conducted research on game optimization and performance analysis.</li>
+                </ul>
+            </div>
+        </li>
+        <li class="timeline-item" aria-labelledby="higher-secondary">
+            <div class="timeline-icon" aria-label="Completed higher secondary school at KSK College" role="img">
+                <i class="fas fa-school" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-content">
+                <h3 id="higher-secondary">Higher Secondary School</h3>
+                <p><strong>Institution:</strong> KSK College, Beed</p>
+                <p><strong>Duration:</strong> 2021</p>
+                <p><strong>Percentage:</strong> 91.50%</p>
+            </div>
+        </li>
+        <li class="timeline-item" aria-labelledby="high-school">
+            <div class="timeline-icon" aria-label="Completed high school at Pragati Vidyalaya" role="img">
+                <i class="fas fa-book" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-content">
+                <h3 id="high-school">High School</h3>
+                <p><strong>Institution:</strong> Pragati Vidyalaya, Beed</p>
+                <p><strong>Duration:</strong> 2019</p>
+                <p><strong>Percentage:</strong> 95.80%</p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+
+<!-- Experience Section -->
+<section class="section">
+    <div class="section-title">
+        <i class="fas fa-briefcase"></i> Experience
+    </div>
+    <ul class="timeline">
+        <li class="timeline-item">
+            <div class="timeline-icon" data-tooltip="Currently working as Game Developer Intern"><i class="fas fa-gamepad"></i></div>
+            <div class="timeline-content">
+                <h3>Game Developer Intern</h3>
+                <p><strong>Company:</strong> Jabsz Gaming Studios LLP</p>
+                <p><strong>Duration:</strong> Sep 2024 - Present</p>
+                <ul>
+                    <li>Worked on various mobile and cross-platform game projects.</li>
+                    <li>Gained hands-on experience and exposure to different facets of game development.</li>
+                    <li>Enhanced skills in game design, development, and teamwork.</li>
+                </ul>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-icon" data-tooltip="Game Development Intern at Arkham Archives"><i class="fas fa-gamepad"></i></div>
+            <div class="timeline-content">
+                <h3>Game Development Intern</h3>
+                <p><strong>Company:</strong> Arkham Archives</p>
+                <p><strong>Duration:</strong> Aug 2024 - 1 month</p>
+                <ul>
+                    <li>Contributed to multiple game development projects, enhancing my understanding of game mechanics and design.</li>
+                    <li>Collaborated closely with the team to implement key features and improve user engagement.</li>
+                    <li>Strengthened my skills in the gaming industry and teamwork.</li>
+                </ul>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-icon" data-tooltip="Graphic Design Intern at Explorers Company"><i class="fas fa-paint-brush"></i></div>
+            <div class="timeline-content">
+                <h3>Graphic Design Intern</h3>
+                <p><strong>Company:</strong> Explorers Company</p>
+                <p><strong>Duration:</strong> Feb 2024 - Apr 2024 (2 months)</p>
+                <ul>
+                    <li>Collaborated with the team on commercial and graphic design projects.</li>
+                    <li>Enhanced ability to create business-aligned designs while developing problem-solving abilities.</li>
+                    <li>Contributed to impactful designs serving the needs of various clients, gaining valuable design skills.</li>
+                </ul>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-icon" data-tooltip="Web Development Intern at Oasis Infobyte"><i class="fas fa-laptop-code"></i></div>
+            <div class="timeline-content">
+                <h3>Web Development Intern</h3>
+                <p><strong>Company:</strong> Oasis Infobyte</p>
+                <p><strong>Duration:</strong> Jan 2024 - Feb 2024 (1 month)</p>
+                <ul>
+                    <li>Developed several web applications, including a cafe landing page, portfolio website, and temperature converter app.</li>
+                    <li>Focused on front-end web development using HTML, CSS, and JavaScript to improve user experience and functionality.</li>
+                    <li>Sharpened web development skills while working on real-world projects.</li>
+                </ul>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-icon" data-tooltip="Front-End Developer Intern at SOFT SMART TECH PUNE"><i class="fas fa-laptop-code"></i></div>
+            <div class="timeline-content">
+                <h3>Front-End Developer</h3>
+                <p><strong>Company:</strong> SOFT SMART TECH PUNE</p>
+                <p><strong>Duration:</strong> Oct 2023 - Dec 2023 (3 months)</p>
+                <ul>
+                    <li>Developed responsive websites using HTML, CSS, JavaScript, and PHP.</li>
+                    <li>Contributed to prompt engineering projects, enhancing real-time communication features.</li>
+                    <li>Improved adaptability, troubleshooting skills, and the ability to deliver high-quality code under tight deadlines.</li>
+                </ul>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-icon" data-tooltip="Graphic and Web Designer at The VITronix Club"><i class="fas fa-paint-brush"></i></div>
+            <div class="timeline-content">
+                <h3>Graphic and Web Designer</h3>
+                <p><strong>Company:</strong> The VITronix Club</p>
+                <p><strong>Duration:</strong> Jun 2023 - Jun 2024 (1 year)</p>
+                <ul>
+                    <li>Developed the club’s website and designed promotional materials.</li>
+                    <li>Improved skills in both graphic and web design and gained hands-on experience with HTML and design principles.</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</section>
+
+
+
+<!-- Skills Section -->
+<section class="skills-section">
+    <h2 class="section-title">Skills</h2>
+
+    <!-- Web Development Category -->
+    <div class="skills-category technical">
+        <h3 class="category-title">Web Development</h3>
+        <div class="skills-list">
+            <div class="skill-item"><div class="skill-icon">💻</div><div class="skill-name">JavaScript</div></div>
+            <div class="skill-item"><div class="skill-icon">🌐</div><div class="skill-name">HTML</div></div>
+            <div class="skill-item"><div class="skill-icon">🎨</div><div class="skill-name">CSS</div></div>
+            <div class="skill-item"><div class="skill-icon">🚀</div><div class="skill-name">Bootstrap</div></div>
+            <div class="skill-item"><div class="skill-icon">🐘</div><div class="skill-name">PHP</div></div>
+            <div class="skill-item"><div class="skill-icon">💾</div><div class="skill-name">SQL</div></div>
+        </div>
+    </div>
+
+    <!-- Game Development Category -->
+    <div class="skills-category game-dev">
+        <h3 class="category-title">Game Development</h3>
+        <div class="skills-list">
+            <div class="skill-item"><div class="skill-icon">🎮</div><div class="skill-name">Unity 3D</div></div>
+            <div class="skill-item"><div class="skill-icon">☕</div><div class="skill-name">Java</div></div>
+            <div class="skill-item"><div class="skill-icon">⚙️</div><div class="skill-name">C#</div></div>
+            <div class="skill-item"><div class="skill-icon">🔥</div><div class="skill-name">Unreal Engine</div></div>
+            <div class="skill-item"><div class="skill-icon">🎲</div><div class="skill-name">Game Design</div></div>
+            <div class="skill-item"><div class="skill-icon">🐱</div><div class="skill-name">GitHub</div></div>
+        </div>
+    </div>
+
+    <!-- Design Skills Category -->
+    <div class="skills-category design">
+        <h3 class="category-title">Design Skills</h3>
+        <div class="skills-list">
+            <div class="skill-item"><div class="skill-icon">🎨</div><div class="skill-name">Figma</div></div>
+            <div class="skill-item"><div class="skill-icon">🖌️</div><div class="skill-name">Canva</div></div>
+            <div class="skill-item"><div class="skill-icon">🖥️</div><div class="skill-name">UI & UX Design</div></div>
+            <div class="skill-item"><div class="skill-icon">🖼️</div><div class="skill-name">Adobe Photoshop</div></div>
+            <div class="skill-item"><div class="skill-icon">🎨</div><div class="skill-name">Graphic Design</div></div>
+            <div class="skill-item"><div class="skill-icon">🌀</div><div class="skill-name">Blender 3D</div></div>
+        </div>
+    </div>
+
+    <!-- Language Skills Category -->
+    <div class="skills-category languages">
+        <h3 class="category-title">Languages</h3>
+        <div class="skills-list">
+            <div class="skill-item"><div class="skill-icon">🇺🇸</div><div class="skill-name">English</div></div>
+            <div class="skill-item"><div class="skill-icon">🇮🇳</div><div class="skill-name">Hindi</div></div>
+            <div class="skill-item"><div class="skill-icon">🇮🇳</div><div class="skill-name">Marathi</div></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Scroll-based animations
+    const skillsSection = document.querySelector('.skills-section');
+    const categories = document.querySelectorAll('.skills-category');
+    const skillItems = document.querySelectorAll('.skill-item');
+
+    function handleScrollAnimation() {
+        const sectionPosition = skillsSection.getBoundingClientRect().top;
+        if (sectionPosition < window.innerHeight - 100) {
+            skillsSection.classList.add('show');
+        }
+
+        categories.forEach(category => {
+            const categoryPosition = category.getBoundingClientRect().top;
+            if (categoryPosition < window.innerHeight - 100) {
+                category.classList.add('show');
+            }
+        });
+
+        skillItems.forEach(skill => {
+            const skillPosition = skill.getBoundingClientRect().top;
+            if (skillPosition < window.innerHeight - 100) {
+                skill.classList.add('show');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScrollAnimation);
+    handleScrollAnimation();
+</script>
+
+<script>
+    // Particle.js Configuration
+    particlesJS('particles-js', {
+        particles: {
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#fff"
+                }
+            },
+            opacity: {
+                value: 0.5,
+                random: true
+            },
+            size: {
+                value: 5,
+                random: true
+            },
+            move: {
+                enable: true,
+                speed: 3,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out"
+            }
+        },
+        interactivity: {
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                }
+            },
+            modes: {
+                repulse: {
+                    distance: 100,
+                    duration: 0.4
+                },
+                push: {
+                    particles_nb: 4
+                }
+            }
+        },
+        retina_detect: true
+    });
+</script>
+
+
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="top-line"></div>
+        <p>&copy; 2024 VishwjeetFate. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+/* Hero Section Styles */
+.hero {
+    background-image: url('/Images/My images/1.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Add parallax effect */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #F0F0F0;
+    position: relative;
+    text-align: left;
+    padding: 0 120px;
+    transition: padding 0.3s ease, background-image 0.5s ease;
+    gap: 40px; /* Added spacing between text content and profile photo */
+}
+
+/* Overlay on hero section */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Top line under the hero */
+.top-line {
+    width: 100%;
+    height: 2px;
+    background-color: #0095B7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 30px; /* Added more space below the top line */
+}
+
+/* Hero content styling */
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    gap: 40px; /* Added gap between content sections */
+    position: relative;
+    z-index: 1;
+}
+
+/* Text content styles */
+.text-content {
+    max-width: 700px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 40px; /* Added bottom margin for spacing below text */
+}
+
+/* Profile photo styling */
+.profile-photo img {
+    max-width: 400px;
+    width: 100%; /* Ensure fluid scaling */
+    border-radius: 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-right: 0;
+    margin-bottom: 40px;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #fff; }
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    color: #0095B7;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #0095B7;
+    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+.hero h2 {
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgba(255, 255, 255, 0.8);
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    color: white;
+    line-height: 20px;
+}
+
+/* Button styles */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #0095B7;
+    color: #ffffff;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0095B7;
+    border: 2px solid #0095B7;
+    margin-left: 15px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: rgb(140, 222, 242);
+    transform: scale(1.05);
+    color: #ffffff;
+}
+
+/* Social links */
+.social-links-hero {
+    padding-top: 7px;
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    position: relative;
+    gap: 7px;
+}
+
+.social-links-hero a {
+    color: #0095B7;
+    margin: 1.5rem 0;
+    font-size: 2rem;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.social-links-hero a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #0095B7;
+}
+
+.social-links-hero a:hover {
+    color: rgb(140, 222, 242);
+    transform: scale(1.2);
+}
+
+.social-links-hero a:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 149, 183, 0.6);
+}
+
+/* Stars animation */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2017/12/27/18/45/star-3048719_960_720.png') repeat;
+    z-index: -2;
+    animation: stars-animation 200s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes stars-animation {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 10px;
+        height: auto;
+    }
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .text-content, .profile-photo {
+        margin: 0;
+    }
+    .hero h1, .hero h2, .btn-contact, .hero p {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .profile-photo img {
+        max-width: 300px;
+        margin-top: 30px;
+    }
+    .social-links-hero {
+        padding-top: 7px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 7px;
+    }
+    .social-links-hero a {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px 10px;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.3rem);
+    }
+
+    .hero h2 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .btn-contact {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .profile-photo img {
+        max-width: 250px;
+        margin-top: 20px;
+    }
+
+    .social-links-hero {
+        padding-top: 6px;
+        text-align: center;
+        flex-direction: row;
+        justify-content: center;
+        gap: 7px;
+    }
+
+    .social-links-hero a {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+}
